@@ -249,7 +249,7 @@ const App = () => {
                 ))}
               </tbody>
             </table>
-            <p style={{ fontSize: '0.75rem', color: '#C4B5FD', marginTop: '1rem', textAlign: 'center' }}>💡 Données Vini Gaming Ping - Tests depuis Paea avec ViniBox Pro</p>
+            <p style={{ fontSize: '0.75rem', color: '#C4B5FD', marginTop: '1rem', textAlign: 'center' }}></p>
           </div>
         </section>
 

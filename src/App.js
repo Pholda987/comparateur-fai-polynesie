@@ -214,45 +214,6 @@ const App = () => {
           </div>
         </section>
 
-        {/* Latence Gaming */}
-        <section style={styles.section}>
-          <div style={{ background: 'linear-gradient(135deg, #581C87, #312E81)', borderRadius: '1rem', padding: '1.5rem', color: 'white' }}>
-            <h2 style={{ marginBottom: '1rem' }}>🎮 Latence Gaming (Ping depuis Tahiti)</h2>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
-              <thead>
-                <tr style={{ borderBottom: '1px solid #6B21A8' }}>
-                  <th style={{ textAlign: 'left', padding: '0.5rem' }}>Jeu</th>
-                  <th style={{ textAlign: 'center', padding: '0.5rem' }}><img src={operators.vini.logo} alt="Vini" style={{ height: '20px' }} /></th>
-                  <th style={{ textAlign: 'center', padding: '0.5rem' }}><img src={operators.ora.logo} alt="Ora" style={{ height: '20px' }} /></th>
-                  <th style={{ textAlign: 'center', padding: '0.5rem' }}><img src={operators.vodafone.logo} alt="Vodafone" style={{ height: '20px' }} /></th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { game: 'Fortnite', v: 108, o: 125, vf: 130 },
-                  { game: 'Marvel Rivals', v: 126, o: 140, vf: 145 },
-                  { game: 'Call of Duty', v: 115, o: 135, vf: 140 },
-                  { game: 'Arc Raiders', v: 155, o: 165, vf: 170 },
-                ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #6B21A850' }}>
-                    <td style={{ padding: '0.5rem' }}>{row.game}</td>
-                    <td style={{ textAlign: 'center', padding: '0.5rem' }}>
-                      <span style={{ backgroundColor: row.v <= Math.min(row.o, row.vf) ? '#22C55E' : '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.v} ms</span>
-                    </td>
-                    <td style={{ textAlign: 'center', padding: '0.5rem' }}>
-                      <span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.o} ms</span>
-                    </td>
-                    <td style={{ textAlign: 'center', padding: '0.5rem' }}>
-                      <span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.vf} ms</span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <p style={{ fontSize: '0.75rem', color: '#C4B5FD', marginTop: '1rem', textAlign: 'center' }}></p>
-          </div>
-        </section>
-
         {/* Sites officiels */}
         <section style={styles.section}>
           <div style={{ background: 'linear-gradient(to right, #0891B2, #2563EB)', borderRadius: '1rem', padding: '1.5rem', color: 'white', textAlign: 'center' }}>

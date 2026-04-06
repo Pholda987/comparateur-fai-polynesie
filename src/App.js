@@ -12,8 +12,6 @@ const App = () => {
       tagline: 'Opérateur historique - Réseau le plus étendu',
       description: "Filiale de l'OPT, couverture sur tous les archipels",
       coverage: 5, speed: 5, price: 3, support: 4,
-      pros: ['Meilleure couverture', '5G disponible', 'eSIM', 'Boutiques partout'],
-      cons: ['Tarifs plus élevés', 'Service client parfois lent'],
     },
     ora: {
       name: 'Ora',
@@ -22,8 +20,6 @@ const App = () => {
       tagline: "Pionnier de l'internet sans ligne fixe",
       description: 'Premier internet sans ligne téléphonique depuis 2011',
       coverage: 4, speed: 4, price: 5, support: 4,
-      pros: ['Meilleurs prix', 'Pas de ligne fixe', 'Box 4G+ offerte', 'Fibre 5 990 F'],
-      cons: ['Couverture limitée hors Tahiti', 'Réseau mobile moins dense'],
     },
     vodafone: {
       name: 'Vodafone',
@@ -32,54 +28,60 @@ const App = () => {
       tagline: "La puissance d'un réseau mondial",
       description: 'Entreprise 100% polynésienne avec expertise internationale',
       coverage: 3, speed: 4, price: 4, support: 5,
-      pros: ['Report des crédits', 'Appels internationaux', '5G', 'Service client réactif'],
-      cons: ['Couverture réduite dans les îles', 'Moins de points de vente'],
     },
   };
 
   const offers = {
     fibre: [
-      // VINI
+      // VINI FIBRE
       { operator: 'vini', name: 'Vinibox POP', download: '30', upload: '10', price: 6100, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box', 'TV en option'] },
       { operator: 'vini', name: 'Vinibox POP + TV', download: '30', upload: '10', price: 8600, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box', 'CANAL+ inclus'] },
       { operator: 'vini', name: 'Vinibox UP', download: '200', upload: '75', price: 9000, data: 'Illimité', features: ['ViniSPOT 1h', '2h appels internationaux', 'Appels illimités entre box'] },
       { operator: 'vini', name: 'Vinibox UP + TV', download: '200', upload: '75', price: 9900, data: 'Illimité', features: ['ViniSPOT 1h', '2h appels internationaux', 'CANAL+ inclus'] },
       { operator: 'vini', name: 'Vinibox JET', download: '300', upload: '100', price: 12900, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'Appels illimités entre box'] },
       { operator: 'vini', name: 'Vinibox JET + TV', download: '300', upload: '100', price: 13800, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'CANAL+ inclus'] },
-      // ORA
+      // ORA FIBRE
       { operator: 'ora', name: 'Ora Fibre Power', download: '50', upload: '10', price: 6990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6', 'Aide raccordement 50 000 F'] },
       { operator: 'ora', name: 'Ora Fibre Max', download: '200', upload: '100', price: 9990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6', 'Ultra rapide'] },
-      // VODAFONE
+      // VODAFONE FIBRE
       { operator: 'vodafone', name: 'VodaFibre', download: '100', upload: '50', price: 9900, data: 'Illimité', features: ['Secours 4G inclus', 'Installation simplifiée'] },
     ],
     box4g: [
-      // ORA
-      { operator: 'ora', name: 'Ora Box Classik', download: '30', upload: '10', price: 4995, data: '200 Go', features: ['Box 4G+ offerte', 'Sans ligne fixe'] },
-      { operator: 'ora', name: 'Ora Box Confort', download: '30', upload: '10', price: 6995, data: '400 Go', features: ['Box 4G+ offerte', 'Sans ligne fixe'] },
-      { operator: 'ora', name: 'Ora Box No Limit Confort', download: '50', upload: '10', price: 8995, data: 'Illimité', features: ['Box 4G+ offerte', 'Sans ligne fixe'] },
-      { operator: 'ora', name: 'Ora Box No Limit Intense', download: '200', upload: '100', price: 11995, data: 'Illimité', features: ['5G', 'Sans ligne fixe'] },
-      // VODAFONE
-      { operator: 'vodafone', name: 'Vodasurf Nomad', download: '30', upload: '10', price: 2200, data: '15 Go', features: ['Portable', 'Sans engagement'] },
-      { operator: 'vodafone', name: 'Vodasurf', download: '30', upload: '10', price: 4900, data: '100 Go', features: ['Sans ligne fixe', '4G+'] },
-      { operator: 'vodafone', name: 'Vodasurf Supreme', download: '200', upload: '100', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert 24 mois'] },
-      // VINI
-      { operator: 'vini', name: 'Vinibox 4G', download: '50', upload: '20', price: 5500, data: '100 Go', features: ['Couverture étendue', 'Backup 4G'] },
-      { operator: 'vini', name: 'Vinibox 5G', download: '100', upload: '50', price: 7500, data: '200 Go', features: ['5G', 'Couverture étendue'] },
+      // ORA BOX
+      { operator: 'ora', name: 'Ora Box Classik', download: '30', upload: '10', price: 4995, data: '200 Go', features: ['Box 4G+ offerte', 'Illimité 00h-06h'] },
+      { operator: 'ora', name: 'Ora Box Confort', download: '30', upload: '10', price: 6995, data: '400 Go', features: ['Box 4G+ offerte', 'Illimité 00h-06h'] },
+      { operator: 'ora', name: 'Ora Box No Limit Confort', download: '50', upload: '10', price: 8995, data: 'Illimité', features: ['Box 4G+ offerte', '4G/5G'] },
+      { operator: 'ora', name: 'Ora Box No Limit Intense', download: '200', upload: '100', price: 11995, data: 'Illimité', features: ['Box 4G+ offerte', '5G'] },
+      // VINI BOX 4G/5G
+      { operator: 'vini', name: 'Vinibox 4G 30 Go', download: '10', upload: '2', price: 1500, data: '30 Go', features: ['Sans engagement', 'Débit débridé en option'] },
+      { operator: 'vini', name: 'Vinibox 4G 60 Go', download: '10', upload: '2', price: 3500, data: '60 Go', features: ['Sans engagement', 'Débit débridé en option'] },
+      { operator: 'vini', name: 'Vinibox 4G 100 Go', download: '10', upload: '2', price: 4500, data: '100 Go', features: ['Sans engagement', 'Débit débridé en option'] },
+      { operator: 'vini', name: 'Vinibox 4G/5G 200 Go', download: '20', upload: '10', price: 7900, data: '200 Go', features: ['5G', 'Débit débridé en option'] },
+      { operator: 'vini', name: 'Vinibox 4G/5G Illimité Standard', download: '20', upload: '10', price: 8900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Engagement 24 mois'] },
+      { operator: 'vini', name: 'Vinibox 4G/5G Illimité Options', download: '100', upload: '60', price: 11900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Débit débridé', 'Maintien du débit'] },
+      // VODAFONE VODASURF
+      { operator: 'vodafone', name: 'Vodasurf Master', download: '30', upload: '10', price: 4900, data: '200 Go', features: ['5G', 'Illimité 00h-06h'] },
+      { operator: 'vodafone', name: 'Vodasurf Elite', download: '30', upload: '10', price: 6900, data: '300 Go', features: ['5G', 'Illimité 00h-06h'] },
+      { operator: 'vodafone', name: 'Vodasurf Supreme', download: '30', upload: '10', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
+      { operator: 'vodafone', name: 'Vodasurf Ultra', download: '200', upload: '100', price: 10900, data: 'Illimité', features: ['5G', 'Équivalent fibre', 'Routeur offert'] },
     ],
     mobile: [
-      // VINI
-      { operator: 'vini', name: 'Vini Iti 1 Go', download: '4G', upload: '-', price: 450, data: '1 Go', features: ['SMS illimités', 'Bonus jeune +10 Go'] },
-      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G/5G', upload: '-', price: 1200, data: '5 Go', features: ['Appels fixes illimités', 'SMS illimités'] },
-      { operator: 'vini', name: 'Vini Nui 20 Go', download: '5G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités', 'SMS illimités'] },
-      { operator: 'vini', name: 'Vini Nui 50 Go', download: '5G', upload: '-', price: 3900, data: '50 Go', features: ['Appels illimités', 'SMS illimités'] },
-      // ORA
-      { operator: 'ora', name: 'Ora Access', download: '4G', upload: '-', price: 995, data: '20 Go', features: ['Sans engagement'] },
-      { operator: 'ora', name: 'Ora Like 5G', download: '5G', upload: '-', price: 1995, data: '50 Go', features: ['Sans engagement'] },
-      { operator: 'ora', name: 'Ora Enjoy 5G', download: '5G', upload: '-', price: 2995, data: '80 Go', features: ['Appels illimités'] },
-      { operator: 'ora', name: 'Ora Smart 5G', download: '5G', upload: '-', price: 4995, data: '120 Go', features: ['Appels illimités', 'Sans engagement'] },
-      // VODAFONE
-      { operator: 'vodafone', name: 'Smile', download: '4G/5G', upload: '-', price: 1500, data: '10 Go', features: ['Report crédits', 'Appels locaux'] },
-      { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels internationaux 28 pays', 'Report crédits'] },
+      // VINI MOBILE
+      { operator: 'vini', name: 'Vini Iti', download: '4G', upload: '-', price: 450, data: '100 Mo', features: ['1h appels', 'SMS illimités', '+10 Go bonus jeune'] },
+      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G', upload: '-', price: 1200, data: '5 Go', features: ['2h appels', 'SMS illimités', '+10 Go bonus jeune'] },
+      { operator: 'vini', name: 'Vini Nui 20 Go', download: '4G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités', 'SMS illimités', '+10 Go bonus jeune'] },
+      { operator: 'vini', name: 'Vini Reva 80 Go', download: '5G', upload: '-', price: 4900, data: '80 Go', features: ['Appels illimités', '6h international', 'eSIM offerte 24 mois'] },
+      { operator: 'vini', name: 'Vini Reva 150 Go', download: '5G', upload: '-', price: 7900, data: '150 Go', features: ['Appels illimités', '12h international', 'eSIM offerte 24 mois'] },
+      { operator: 'vini', name: 'Vini Reva 250 Go', download: '5G', upload: '-', price: 9900, data: '250 Go', features: ['Appels illimités', 'International illimité', 'eSIM offerte 24 mois'] },
+      // ORA MOBILE
+      { operator: 'ora', name: 'Ora Access', download: '4G', upload: '-', price: 995, data: '20 Go', features: ['2h appels locaux', 'SMS illimités', 'Sans engagement'] },
+      { operator: 'ora', name: 'Ora Like 5G', download: '5G', upload: '-', price: 1995, data: '50 Go', features: ['Appels illimités', '2h international', 'SMS illimités'] },
+      { operator: 'ora', name: 'Ora Enjoy 5G', download: '5G', upload: '-', price: 2995, data: '80 Go', features: ['Appels illimités', '10h international', 'SMS illimités'] },
+      { operator: 'ora', name: 'Ora Smart 5G', download: '5G', upload: '-', price: 4995, data: '120 Go', features: ['Appels illimités', 'International illimité', '2 Go roaming'] },
+      // VODAFONE MOBILE
+      { operator: 'vodafone', name: 'Smile x2 Base', download: '4G', upload: '-', price: 500, data: '12 Go', features: ['2h appels', 'SMS illimités', 'Personnalisable'] },
+      { operator: 'vodafone', name: 'Smile x2 25 Go', download: '4G', upload: '-', price: 2200, data: '25 Go', features: ['8h appels', 'SMS illimités', 'Personnalisable'] },
+      { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels illimités', 'International illimité', 'SMS illimités'] },
     ],
   };
 
@@ -115,6 +117,7 @@ const App = () => {
       </header>
 
       <main style={styles.main}>
+        {/* Opérateurs */}
         <section style={styles.section}>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>📊 Comparez les opérateurs</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
@@ -144,7 +147,9 @@ const App = () => {
           </div>
         </section>
 
+        {/* Offres */}
         <section style={styles.section}>
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>💰 Toutes les offres</h2>
           <div style={{ marginBottom: '1.5rem' }}>
             {[{ id: 'fibre', label: '🌐 Fibre' }, { id: 'box4g', label: '📡 Box 4G/5G' }, { id: 'mobile', label: '📱 Mobile' }].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)}
@@ -154,19 +159,28 @@ const App = () => {
             ))}
             {selectedOperator && <button onClick={() => setSelectedOperator(null)} style={{ ...styles.button, backgroundColor: '#EEE' }}>✕ Voir tous</button>}
           </div>
+          
+          {/* Compteur */}
+          <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>
+            {filteredOffers.length} offre{filteredOffers.length > 1 ? 's' : ''} {selectedOperator ? `chez ${operators[selectedOperator].name}` : 'disponibles'}
+          </p>
+
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
             {filteredOffers.sort((a, b) => a.price - b.price).map((offer, i) => {
               const op = operators[offer.operator];
               const isMobile = activeTab === 'mobile';
               const hasTV = offer.name.includes('+ TV') || offer.name.includes('CANAL');
+              const is5G = offer.name.includes('5G') || offer.download === '5G';
               return (
                 <div key={i} style={{ ...styles.offerCard, borderLeftColor: op.color, position: 'relative' }}>
                   {hasTV && <span style={{ position: 'absolute', top: '-8px', right: '10px', backgroundColor: '#9333EA', color: 'white', fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>📺 CANAL+</span>}
+                  {is5G && !hasTV && <span style={{ position: 'absolute', top: '-8px', right: '10px', backgroundColor: '#0891B2', color: 'white', fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>5G</span>}
+                  
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <img src={op.logo} alt={op.name} style={{ height: '24px', maxWidth: '60px', objectFit: 'contain' }} />
                       <div>
-                        <strong>{offer.name}</strong>
+                        <strong style={{ fontSize: '0.95rem' }}>{offer.name}</strong>
                         <span style={{ display: 'block', fontSize: '0.7rem', backgroundColor: op.color, color: 'white', padding: '0.1rem 0.4rem', borderRadius: '9999px', width: 'fit-content', marginTop: '0.25rem' }}>{op.name}</span>
                       </div>
                     </div>
@@ -175,6 +189,7 @@ const App = () => {
                       <div style={{ fontSize: '0.7rem', color: '#999' }}>/mois</div>
                     </div>
                   </div>
+
                   <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : '1fr 1fr 1fr', gap: '0.5rem', marginBottom: '0.75rem' }}>
                     <div style={{ backgroundColor: '#F3F4F6', padding: '0.4rem', borderRadius: '0.4rem', textAlign: 'center' }}>
                       <div style={{ fontSize: '0.65rem', color: '#888' }}>{isMobile ? 'Réseau' : '↓ Download'}</div>
@@ -191,6 +206,7 @@ const App = () => {
                       <div style={{ fontWeight: 'bold', fontSize: '0.85rem' }}>{offer.data}</div>
                     </div>
                   </div>
+
                   {offer.features.map((f, j) => <div key={j} style={{ fontSize: '0.75rem', color: '#666' }}>✓ {f}</div>)}
                 </div>
               );
@@ -198,9 +214,10 @@ const App = () => {
           </div>
         </section>
 
+        {/* Latence Gaming */}
         <section style={styles.section}>
           <div style={{ background: 'linear-gradient(135deg, #581C87, #312E81)', borderRadius: '1rem', padding: '1.5rem', color: 'white' }}>
-            <h2 style={{ marginBottom: '1rem' }}>🎮 Latence Gaming (Ping)</h2>
+            <h2 style={{ marginBottom: '1rem' }}>🎮 Latence Gaming (Ping depuis Paea)</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid #6B21A8' }}>
@@ -211,20 +228,32 @@ const App = () => {
                 </tr>
               </thead>
               <tbody>
-                {[{ game: 'Fortnite', v: 108, o: 125, vf: 130 }, { game: 'Marvel Rivals', v: 126, o: 140, vf: 145 }, { game: 'Call of Duty', v: 115, o: 135, vf: 140 }].map((row, i) => (
+                {[
+                  { game: 'Fortnite', v: 108, o: 125, vf: 130 },
+                  { game: 'Marvel Rivals', v: 126, o: 140, vf: 145 },
+                  { game: 'Call of Duty', v: 115, o: 135, vf: 140 },
+                  { game: 'Arc Raiders', v: 155, o: 165, vf: 170 },
+                ].map((row, i) => (
                   <tr key={i} style={{ borderBottom: '1px solid #6B21A850' }}>
                     <td style={{ padding: '0.5rem' }}>{row.game}</td>
-                    <td style={{ textAlign: 'center', padding: '0.5rem' }}><span style={{ backgroundColor: row.v <= Math.min(row.o, row.vf) ? '#22C55E' : '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.v} ms</span></td>
-                    <td style={{ textAlign: 'center', padding: '0.5rem' }}><span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.o} ms</span></td>
-                    <td style={{ textAlign: 'center', padding: '0.5rem' }}><span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.vf} ms</span></td>
+                    <td style={{ textAlign: 'center', padding: '0.5rem' }}>
+                      <span style={{ backgroundColor: row.v <= Math.min(row.o, row.vf) ? '#22C55E' : '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.v} ms</span>
+                    </td>
+                    <td style={{ textAlign: 'center', padding: '0.5rem' }}>
+                      <span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.o} ms</span>
+                    </td>
+                    <td style={{ textAlign: 'center', padding: '0.5rem' }}>
+                      <span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.vf} ms</span>
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-            <p style={{ fontSize: '0.75rem', color: '#C4B5FD', marginTop: '1rem', textAlign: 'center' }}>💡 Données Vini Gaming Ping - Paea</p>
+            <p style={{ fontSize: '0.75rem', color: '#C4B5FD', marginTop: '1rem', textAlign: 'center' }}>💡 Données Vini Gaming Ping - Tests depuis Paea avec ViniBox Pro</p>
           </div>
         </section>
 
+        {/* Sites officiels */}
         <section style={styles.section}>
           <div style={{ background: 'linear-gradient(to right, #0891B2, #2563EB)', borderRadius: '1rem', padding: '1.5rem', color: 'white', textAlign: 'center' }}>
             <h2 style={{ marginBottom: '1rem' }}>🔗 Sites officiels</h2>
@@ -243,6 +272,7 @@ const App = () => {
       <footer style={styles.footer}>
         <p style={{ fontSize: '1.5rem' }}>🌺 Mauruuru roa ! 🌴</p>
         <p style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Comparateur FAI Polynésie - Avril 2026</p>
+        <p style={{ color: '#64748B', fontSize: '0.75rem', marginTop: '0.5rem' }}>Données mises à jour le 05/04/2026 • Sources : vini.pf, ora.pf, vodafone.pf</p>
       </footer>
     </div>
   );

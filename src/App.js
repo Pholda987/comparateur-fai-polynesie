@@ -9,7 +9,7 @@ const App = () => {
       name: 'Vini',
       logo: 'https://www.vini.pf/themes/vini/images/logo.svg',
       color: '#dc001c',
-      tagline: 'Opérateur historique, Réseau le plus étendu',
+      tagline: 'Opérateur historique',
       description: "Filiale de l'OPT, couverture sur tous les archipels",
       coverage: 5, speed: 5, price: 3, support: 4,
     },

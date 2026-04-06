@@ -19,7 +19,7 @@ const App = () => {
       color: '#005528',
       tagline: "Pionnier de l'internet sans ligne fixe",
       description: 'Premier internet sans ligne téléphonique depuis 2011',
-      coverage: 4, speed: 4, price: 5, support: 4,
+      coverage: 4, speed: 4, price: 4, support: 4,
     },
     vodafone: {
       name: 'Vodafone',
@@ -27,7 +27,7 @@ const App = () => {
       color: '#8C1F28',
       tagline: "La puissance d'un réseau mondial",
       description: 'Entreprise 100% polynésienne avec expertise internationale',
-      coverage: 3, speed: 4, price: 4, support: 5,
+      coverage: 3, speed: 4, price: 5, support: 4,
     },
   };
 

@@ -41,8 +41,8 @@ const App = () => {
       { operator: 'vini', name: 'Vinibox JET', download: '300', upload: '100', price: 12900, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'Appels illimités entre box'] },
       { operator: 'vini', name: 'Vinibox JET + TV', download: '300', upload: '100', price: 13800, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'CANAL+ inclus'] },
       // ORA FIBRE
-      { operator: 'ora', name: 'Ora Fibre Power', download: '50', upload: '10', price: 6990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6', 'Aide raccordement 50 000 F'] },
-      { operator: 'ora', name: 'Ora Fibre Max', download: '200', upload: '100', price: 9990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6', 'Ultra rapide', 'Aide raccordement 50 000 F'] },
+      { operator: 'ora', name: 'Ora Fibre Power', download: '50', upload: '10', price: 6990, data: 'Illimité', features: ['Modem Wi-Fi 6', 'Aide raccordement 50 000 F'] },
+      { operator: 'ora', name: 'Ora Fibre Max', download: '200', upload: '100', price: 9990, data: 'Illimité', features: ['Modem Wi-Fi 6', 'Ultra rapide', 'Aide raccordement 50 000 F'] },
       // VODAFONE FIBRE
       { operator: 'vodafone', name: 'VodaFibre', download: '100', upload: '50', price: 9900, data: 'Illimité', features: ['Secours 4G inclus', 'Installation simplifiée'] },
     ],

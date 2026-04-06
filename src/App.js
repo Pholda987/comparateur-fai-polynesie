@@ -8,7 +8,7 @@ const ComparateurFAI = () => {
     vini: {
       name: 'Vini',
       logo: '🔵',
-      color: '#0066CC',
+      color: '#dc001c',
       tagline: 'Opérateur historique - Réseau le plus étendu',
       description: "Filiale de l'OPT, couverture sur tous les archipels",
       coverage: 5,
@@ -21,7 +21,7 @@ const ComparateurFAI = () => {
     ora: {
       name: 'Ora',
       logo: '🟠',
-      color: '#FF6B00',
+      color: '#005528',
       tagline: "Pionnier de l'internet sans ligne fixe",
       description: 'Premier à proposer internet sans ligne téléphonique depuis 2011',
       coverage: 4,

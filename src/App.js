@@ -93,4 +93,125 @@ const App = () => {
         <section style={styles.section}>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1.5rem' }}>📊 Comparez les opérateurs</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
-            {Object.entries(operators).m
+            {Object.entries(operators).map(([id, op]) => (
+              <div key={id} onClick={() => setSelectedOperator(selectedOperator === id ? null : id)}
+                style={{ ...styles.card, border: selectedOperator === id ? `3px solid ${op.color}` : '1px solid #E5E7EB', transform: selectedOperator === id ? 'scale(1.02)' : 'scale(1)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  <img src={op.logo} alt={op.name} style={{ height: '40px', maxWidth: '100px', objectFit: 'contain' }} />
+                  <div>
+                    <h3 style={{ margin: 0, color: op.color, fontSize: '1.5rem' }}>{op.name}</h3>
+                    <p style={{ margin: 0, fontSize: '0.8rem', color: '#666' }}>{op.tagline}</p>
+                  </div>
+                </div>
+                <p style={{ fontSize: '0.9rem', color: '#444', marginBottom: '1rem' }}>{op.description}</p>
+                {['Couverture', 'Vitesse', 'Prix', 'Support'].map((label, i) => (
+                  <div key={label} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
+                    <span style={{ fontSize: '0.85rem', color: '#666' }}>{label}</span>
+                    <StarRating rating={[op.coverage, op.speed, op.price, op.support][i]} color={op.color} />
+                  </div>
+                ))}
+                <a href={`https://www.${id}.pf`} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
+                  style={{ display: 'block', textAlign: 'center', marginTop: '1rem', padding: '0.5rem', borderRadius: '0.5rem', backgroundColor: op.color, color: 'white', textDecoration: 'none', fontWeight: '600' }}>
+                  Visiter {op.name} →
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section style={styles.section}>
+          <div style={{ marginBottom: '1.5rem' }}>
+            {[{ id: 'fibre', label: '🌐 Fibre' }, { id: 'box4g', label: '📡 Box 4G/5G' }, { id: 'mobile', label: '📱 Mobile' }].map(tab => (
+              <button key={tab.id} onClick={() => setActiveTab(tab.id)}
+                style={{ ...styles.button, backgroundColor: activeTab === tab.id ? '#0891B2' : 'white', color: activeTab === tab.id ? 'white' : '#333' }}>
+                {tab.label}
+              </button>
+            ))}
+            {selectedOperator && <button onClick={() => setSelectedOperator(null)} style={{ ...styles.button, backgroundColor: '#EEE' }}>✕ Voir tous</button>}
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+            {filteredOffers.sort((a, b) => a.price - b.price).map((offer, i) => {
+              const op = operators[offer.operator];
+              return (
+                <div key={i} style={{ ...styles.offerCard, borderLeftColor: op.color }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <img src={op.logo} alt={op.name} style={{ height: '24px', maxWidth: '60px', objectFit: 'contain' }} />
+                      <div>
+                        <strong>{offer.name}</strong>
+                        <span style={{ display: 'block', fontSize: '0.7rem', backgroundColor: op.color, color: 'white', padding: '0.1rem 0.4rem', borderRadius: '9999px', width: 'fit-content', marginTop: '0.25rem' }}>{op.name}</span>
+                      </div>
+                    </div>
+                    <div style={{ textAlign: 'right' }}>
+                      <div style={{ fontSize: '1.4rem', fontWeight: '900', color: op.color }}>{offer.price.toLocaleString()} F</div>
+                      <div style={{ fontSize: '0.7rem', color: '#999' }}>/mois</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                    <div style={{ backgroundColor: '#F3F4F6', padding: '0.4rem', borderRadius: '0.4rem', textAlign: 'center' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#888' }}>Débit</div>
+                      <div style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>{offer.speed}</div>
+                    </div>
+                    <div style={{ backgroundColor: '#F3F4F6', padding: '0.4rem', borderRadius: '0.4rem', textAlign: 'center' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#888' }}>Data</div>
+                      <div style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>{offer.data}</div>
+                    </div>
+                  </div>
+                  {offer.features.map((f, j) => <div key={j} style={{ fontSize: '0.75rem', color: '#666' }}>✓ {f}</div>)}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section style={styles.section}>
+          <div style={{ background: 'linear-gradient(135deg, #581C87, #312E81)', borderRadius: '1rem', padding: '1.5rem', color: 'white' }}>
+            <h2 style={{ marginBottom: '1rem' }}>🎮 Latence Gaming (Ping)</h2>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid #6B21A8' }}>
+                  <th style={{ textAlign: 'left', padding: '0.5rem' }}>Jeu</th>
+                  <th style={{ textAlign: 'center', padding: '0.5rem' }}><img src={operators.vini.logo} alt="Vini" style={{ height: '20px' }} /></th>
+                  <th style={{ textAlign: 'center', padding: '0.5rem' }}><img src={operators.ora.logo} alt="Ora" style={{ height: '20px' }} /></th>
+                  <th style={{ textAlign: 'center', padding: '0.5rem' }}><img src={operators.vodafone.logo} alt="Vodafone" style={{ height: '20px' }} /></th>
+                </tr>
+              </thead>
+              <tbody>
+                {[{ game: 'Fortnite', v: 108, o: 125, vf: 130 }, { game: 'Marvel Rivals', v: 126, o: 140, vf: 145 }, { game: 'Call of Duty', v: 115, o: 135, vf: 140 }].map((row, i) => (
+                  <tr key={i} style={{ borderBottom: '1px solid #6B21A850' }}>
+                    <td style={{ padding: '0.5rem' }}>{row.game}</td>
+                    <td style={{ textAlign: 'center', padding: '0.5rem' }}><span style={{ backgroundColor: row.v <= Math.min(row.o, row.vf) ? '#22C55E' : '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.v} ms</span></td>
+                    <td style={{ textAlign: 'center', padding: '0.5rem' }}><span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.o} ms</span></td>
+                    <td style={{ textAlign: 'center', padding: '0.5rem' }}><span style={{ backgroundColor: '#6B21A8', padding: '0.2rem 0.6rem', borderRadius: '9999px' }}>{row.vf} ms</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p style={{ fontSize: '0.75rem', color: '#C4B5FD', marginTop: '1rem', textAlign: 'center' }}>💡 Données Vini Gaming Ping - Paea</p>
+          </div>
+        </section>
+
+        <section style={styles.section}>
+          <div style={{ background: 'linear-gradient(to right, #0891B2, #2563EB)', borderRadius: '1rem', padding: '1.5rem', color: 'white', textAlign: 'center' }}>
+            <h2 style={{ marginBottom: '1rem' }}>🔗 Sites officiels</h2>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+              {Object.entries(operators).map(([id, op]) => (
+                <a key={id} href={`https://www.${id}.pf`} target="_blank" rel="noopener noreferrer"
+                  style={{ backgroundColor: 'white', color: '#333', padding: '1rem 2rem', borderRadius: '0.75rem', textDecoration: 'none', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <img src={op.logo} alt={op.name} style={{ height: '24px' }} /> {op.name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer style={styles.footer}>
+        <p style={{ fontSize: '1.5rem' }}>🌺 Mauruuru roa ! 🌴</p>
+        <p style={{ color: '#94A3B8', fontSize: '0.85rem' }}>Comparateur FAI Polynésie - Avril 2026</p>
+      </footer>
+    </div>
+  );
+};
+
+export default App;

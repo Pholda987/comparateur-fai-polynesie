@@ -39,8 +39,8 @@ const App = () => {
 
   const offers = {
     fibre: [
-      { operator: 'vini', name: 'Vinibox POP', speed: '100 Mb/s', price: 6100, data: 'Illimité', features: ['Appels fixes illimités', 'TV en option'] },
-      { operator: 'vini', name: 'Vinibox UP', speed: '300 Mb/s', price: 9000, data: 'Illimité', features: ['Appels internationaux', 'ViniSPOT'] },
+      { operator: 'vini', name: 'Vinibox POP', speed: '30 Mb/s', price: 6100, data: 'Illimité', features: ['Appels fixes illimités', 'TV en option'] },
+      { operator: 'vini', name: 'Vinibox UP', speed: '200 Mb/s', price: 9000, data: 'Illimité', features: ['Appels internationaux', 'ViniSPOT'] },
       { operator: 'ora', name: 'Ora Fibre', speed: '50 Mb/s', price: 5990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6'] },
       { operator: 'vodafone', name: 'VodaFibre', speed: '100 Mb/s', price: 9900, data: 'Illimité', features: ['Secours 4G inclus'] },
     ],

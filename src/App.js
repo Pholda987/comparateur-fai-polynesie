@@ -138,7 +138,7 @@ const App = () => {
                     <StarRating rating={[op.coverage, op.speed, op.price, op.support][i]} color={op.color} />
                   </div>
                 ))}
-                <a href={`https://www.${id}.pf`} target="_blank" rel="noopener noreferrer" onClick={e => e.stopPropagation()}
+                <p style={{ fontSize: '0.65rem', color: '#999', fontStyle: 'italic', marginTop: '0.5rem', marginBottom: '0.5rem', textAlign: 'center' }}>⚠️ Avis subjectif - non officiel</p>
                   style={{ display: 'block', textAlign: 'center', marginTop: '1rem', padding: '0.5rem', borderRadius: '0.5rem', backgroundColor: op.color, color: 'white', textDecoration: 'none', fontWeight: '600' }}>
                   Visiter {op.name} →
                 </a>

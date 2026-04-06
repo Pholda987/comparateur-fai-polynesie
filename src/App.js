@@ -81,7 +81,7 @@ const App = () => {
       // VODAFONE MOBILE
       { operator: 'vodafone', name: 'Smile x2 Base', download: '4G', upload: '-', price: 500, data: '12 Go', features: ['2h appels', 'SMS illimités', 'Personnalisable'] },
       { operator: 'vodafone', name: 'Smile x2 25 Go', download: '4G', upload: '-', price: 2200, data: '25 Go', features: ['8h appels', 'SMS illimités', 'Personnalisable'] },
-      { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels illimités', 'International illimité', 'SMS illimités'] },
+      { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels illimités', 'International illimité', 'SMS illimités', 'Personnalisable'] },
     ],
   };
 

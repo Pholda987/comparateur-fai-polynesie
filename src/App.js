@@ -67,9 +67,9 @@ const App = () => {
     ],
     mobile: [
       // VINI MOBILE
-      { operator: 'vini', name: 'Vini Iti', download: '4G', upload: '-', price: 450, data: '100 Mo', features: ['1h appels', 'SMS illimités', '+10 Go bonus jeune'] },
-      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G', upload: '-', price: 1200, data: '5 Go', features: ['2h appels', 'SMS illimités', '+10 Go bonus jeune'] },
-      { operator: 'vini', name: 'Vini Nui 20 Go', download: '4G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités', 'SMS illimités', '+10 Go bonus jeune'] },
+      { operator: 'vini', name: 'Vini Iti', download: '4G', upload: '-', price: 450, data: '100 Mo', features: ['1h appels', 'SMS illimités', '+10 Go bonus jeune', 'Disponible en eSIM'] },
+      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G', upload: '-', price: 1200, data: '5 Go', features: ['2h appels', 'SMS illimités', '+10 Go bonus jeune', 'Disponible en eSIM'] },
+      { operator: 'vini', name: 'Vini Nui 20 Go', download: '4G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités', 'SMS illimités', '+10 Go bonus jeune', 'Disponible en eSIM'] },
       { operator: 'vini', name: 'Vini Reva 80 Go', download: '5G', upload: '-', price: 4900, data: '80 Go', features: ['Appels illimités', '6h international', 'eSIM offerte 24 mois'] },
       { operator: 'vini', name: 'Vini Reva 150 Go', download: '5G', upload: '-', price: 7900, data: '150 Go', features: ['Appels illimités', '12h international', 'eSIM offerte 24 mois'] },
       { operator: 'vini', name: 'Vini Reva 250 Go', download: '5G', upload: '-', price: 9900, data: '250 Go', features: ['Appels illimités', 'International illimité', 'eSIM offerte 24 mois'] },

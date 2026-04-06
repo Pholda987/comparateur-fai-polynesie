@@ -31,7 +31,7 @@ const App = () => {
     },
   };
 
-  const offers = {
+ const offers = {
     fibre: [
       // VINI FIBRE
       { operator: 'vini', name: 'Vinibox POP', download: '30', upload: '10', price: 6100, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box'] },
@@ -154,12 +154,14 @@ const App = () => {
                 </a>
               </div>
             ))}
+          </div>
+        </section>
 
         {/* Offres */}
         <section style={styles.section}>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>💰 Toutes les offres</h2>
           <div style={{ marginBottom: '1.5rem' }}>
-            {[{ id: 'fibre', label: '🌐 Fibre' }, { id: 'box4g', label: '📡 Box 4G/5G' }, { id: 'mobile', label: '📱 Mobile' }].map(tab => (
+            {[{ id: 'fibre', label: '🌐 Fibre' }, { id: 'fibrePro', label: '🏢 Fibre PRO' }, { id: 'box4g', label: '📡 Box 4G/5G' }, { id: 'mobile', label: '📱 Mobile' }].map(tab => (
               <button key={tab.id} onClick={() => setActiveTab(tab.id)}
                 style={{ ...styles.button, backgroundColor: activeTab === tab.id ? '#0891B2' : 'white', color: activeTab === tab.id ? 'white' : '#333' }}>
                 {tab.label}
@@ -167,11 +169,7 @@ const App = () => {
             ))}
             {selectedOperator && <button onClick={() => setSelectedOperator(null)} style={{ ...styles.button, backgroundColor: '#EEE' }}>✕ Voir tous</button>}
           </div>
-          const isPro = activeTab === 'fibrePro';
-...
-{isPro && <span style={{...}}>🏢 PRO</span>}
-...
-<div style={{ fontSize: '0.7rem', color: '#999' }}>{isPro ? 'HT /mois' : '/mois'}</div>
+          
           {/* Compteur */}
           <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>
             {filteredOffers.length} offre{filteredOffers.length > 1 ? 's' : ''} {selectedOperator ? `chez ${operators[selectedOperator].name}` : 'disponibles'}
@@ -181,12 +179,14 @@ const App = () => {
             {filteredOffers.sort((a, b) => a.price - b.price).map((offer, i) => {
               const op = operators[offer.operator];
               const isMobile = activeTab === 'mobile';
+              const isPro = activeTab === 'fibrePro';
               const hasTV = offer.name.includes('+ TV') || offer.name.includes('CANAL');
               const is5G = offer.name.includes('5G') || offer.download === '5G';
               return (
                 <div key={i} style={{ ...styles.offerCard, borderLeftColor: op.color, position: 'relative' }}>
                   {hasTV && <span style={{ position: 'absolute', top: '-8px', right: '10px', backgroundColor: '#9333EA', color: 'white', fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>📺 CANAL+</span>}
-                  {is5G && !hasTV && <span style={{ position: 'absolute', top: '-8px', right: '10px', backgroundColor: '#0891B2', color: 'white', fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>5G</span>}
+                  {is5G && !hasTV && !isPro && <span style={{ position: 'absolute', top: '-8px', right: '10px', backgroundColor: '#0891B2', color: 'white', fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>5G</span>}
+                  {isPro && <span style={{ position: 'absolute', top: '-8px', right: '10px', backgroundColor: '#F59E0B', color: 'white', fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>🏢 PRO</span>}
                   
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -198,7 +198,7 @@ const App = () => {
                     </div>
                     <div style={{ textAlign: 'right' }}>
                       <div style={{ fontSize: '1.4rem', fontWeight: '900', color: op.color }}>{offer.price.toLocaleString()} F</div>
-                      <div style={{ fontSize: '0.7rem', color: '#999' }}>/mois</div>
+                      <div style={{ fontSize: '0.7rem', color: '#999' }}>{isPro ? 'HT /mois' : '/mois'}</div>
                     </div>
                   </div>
 

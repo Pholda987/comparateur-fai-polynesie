@@ -39,28 +39,47 @@ const App = () => {
 
   const offers = {
     fibre: [
-      { operator: 'vini', name: 'Vinibox POP', download: '100', upload: '50', price: 6100, data: 'Illimité', features: ['Appels fixes illimités', 'TV en option'] },
-      { operator: 'vini', name: 'Vinibox UP', download: '300', upload: '150', price: 9000, data: 'Illimité', features: ['Appels internationaux', 'ViniSPOT'] },
-      { operator: 'ora', name: 'Ora Fibre Power', download: '50', upload: '10', price: 6990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6'] },
-      { operator: 'ora', name: 'Ora Fibre Max', download: '200', upload: '100', price: 9990, data: 'Illimité', features: ['Sans ligne fixe', 'Ultra rapide'] },
-      { operator: 'vodafone', name: 'VodaFibre', download: '100', upload: '50', price: 9900, data: 'Illimité', features: ['Secours 4G inclus'] },
+      // VINI
+      { operator: 'vini', name: 'Vinibox POP', download: '30', upload: '10', price: 6100, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box', 'TV en option'] },
+      { operator: 'vini', name: 'Vinibox POP + TV', download: '30', upload: '10', price: 8600, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box', 'CANAL+ inclus'] },
+      { operator: 'vini', name: 'Vinibox UP', download: '200', upload: '75', price: 9000, data: 'Illimité', features: ['ViniSPOT 1h', '2h appels internationaux', 'Appels illimités entre box'] },
+      { operator: 'vini', name: 'Vinibox UP + TV', download: '200', upload: '75', price: 9900, data: 'Illimité', features: ['ViniSPOT 1h', '2h appels internationaux', 'CANAL+ inclus'] },
+      { operator: 'vini', name: 'Vinibox JET', download: '300', upload: '100', price: 12900, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'Appels illimités entre box'] },
+      { operator: 'vini', name: 'Vinibox JET + TV', download: '300', upload: '100', price: 13800, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'CANAL+ inclus'] },
+      // ORA
+      { operator: 'ora', name: 'Ora Fibre Power', download: '50', upload: '10', price: 6990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6', 'Aide raccordement 50 000 F'] },
+      { operator: 'ora', name: 'Ora Fibre Max', download: '200', upload: '100', price: 9990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6', 'Ultra rapide'] },
+      // VODAFONE
+      { operator: 'vodafone', name: 'VodaFibre', download: '100', upload: '50', price: 9900, data: 'Illimité', features: ['Secours 4G inclus', 'Installation simplifiée'] },
     ],
     box4g: [
-      { operator: 'ora', name: 'Ora Box Classik', download: '30', upload: '10', price: 4995, data: '200 Go', features: ['Box 4G+ offerte'] },
-      { operator: 'ora', name: 'Ora Box Confort', download: '30', upload: '10', price: 6995, data: '400 Go', features: ['Box 4G+ offerte'] },
-      { operator: 'ora', name: 'Ora Box No Limit', download: '50', upload: '10', price: 8995, data: 'Illimité', features: ['5G ready'] },
-      { operator: 'vodafone', name: 'Vodasurf', download: '30', upload: '10', price: 4900, data: '100 Go', features: ['Sans ligne fixe'] },
-      { operator: 'vodafone', name: 'Vodasurf Supreme', download: '200', upload: '100', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
-      { operator: 'vini', name: 'Vinibox 4G', download: '50', upload: '20', price: 5500, data: '100 Go', features: ['Couverture étendue'] },
+      // ORA
+      { operator: 'ora', name: 'Ora Box Classik', download: '30', upload: '10', price: 4995, data: '200 Go', features: ['Box 4G+ offerte', 'Sans ligne fixe'] },
+      { operator: 'ora', name: 'Ora Box Confort', download: '30', upload: '10', price: 6995, data: '400 Go', features: ['Box 4G+ offerte', 'Sans ligne fixe'] },
+      { operator: 'ora', name: 'Ora Box No Limit Confort', download: '50', upload: '10', price: 8995, data: 'Illimité', features: ['Box 4G+ offerte', 'Sans ligne fixe'] },
+      { operator: 'ora', name: 'Ora Box No Limit Intense', download: '200', upload: '100', price: 11995, data: 'Illimité', features: ['5G', 'Sans ligne fixe'] },
+      // VODAFONE
+      { operator: 'vodafone', name: 'Vodasurf Nomad', download: '30', upload: '10', price: 2200, data: '15 Go', features: ['Portable', 'Sans engagement'] },
+      { operator: 'vodafone', name: 'Vodasurf', download: '30', upload: '10', price: 4900, data: '100 Go', features: ['Sans ligne fixe', '4G+'] },
+      { operator: 'vodafone', name: 'Vodasurf Supreme', download: '200', upload: '100', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert 24 mois'] },
+      // VINI
+      { operator: 'vini', name: 'Vinibox 4G', download: '50', upload: '20', price: 5500, data: '100 Go', features: ['Couverture étendue', 'Backup 4G'] },
+      { operator: 'vini', name: 'Vinibox 5G', download: '100', upload: '50', price: 7500, data: '200 Go', features: ['5G', 'Couverture étendue'] },
     ],
     mobile: [
-      { operator: 'vini', name: 'Vini Iti', download: '4G', upload: '-', price: 450, data: '1 Go', features: ['SMS illimités'] },
-      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G/5G', upload: '-', price: 1200, data: '5 Go', features: ['Appels fixes illimités'] },
-      { operator: 'vini', name: 'Vini Nui 20 Go', download: '5G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités'] },
+      // VINI
+      { operator: 'vini', name: 'Vini Iti 1 Go', download: '4G', upload: '-', price: 450, data: '1 Go', features: ['SMS illimités', 'Bonus jeune +10 Go'] },
+      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G/5G', upload: '-', price: 1200, data: '5 Go', features: ['Appels fixes illimités', 'SMS illimités'] },
+      { operator: 'vini', name: 'Vini Nui 20 Go', download: '5G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités', 'SMS illimités'] },
+      { operator: 'vini', name: 'Vini Nui 50 Go', download: '5G', upload: '-', price: 3900, data: '50 Go', features: ['Appels illimités', 'SMS illimités'] },
+      // ORA
       { operator: 'ora', name: 'Ora Access', download: '4G', upload: '-', price: 995, data: '20 Go', features: ['Sans engagement'] },
+      { operator: 'ora', name: 'Ora Like 5G', download: '5G', upload: '-', price: 1995, data: '50 Go', features: ['Sans engagement'] },
       { operator: 'ora', name: 'Ora Enjoy 5G', download: '5G', upload: '-', price: 2995, data: '80 Go', features: ['Appels illimités'] },
-      { operator: 'vodafone', name: 'Smile', download: '4G', upload: '-', price: 1500, data: '10 Go', features: ['Report crédits'] },
-      { operator: 'vodafone', name: 'Prestige', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels internationaux 28 pays'] },
+      { operator: 'ora', name: 'Ora Smart 5G', download: '5G', upload: '-', price: 4995, data: '120 Go', features: ['Appels illimités', 'Sans engagement'] },
+      // VODAFONE
+      { operator: 'vodafone', name: 'Smile', download: '4G/5G', upload: '-', price: 1500, data: '10 Go', features: ['Report crédits', 'Appels locaux'] },
+      { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels internationaux 28 pays', 'Report crédits'] },
     ],
   };
 
@@ -139,8 +158,10 @@ const App = () => {
             {filteredOffers.sort((a, b) => a.price - b.price).map((offer, i) => {
               const op = operators[offer.operator];
               const isMobile = activeTab === 'mobile';
+              const hasTV = offer.name.includes('+ TV') || offer.name.includes('CANAL');
               return (
-                <div key={i} style={{ ...styles.offerCard, borderLeftColor: op.color }}>
+                <div key={i} style={{ ...styles.offerCard, borderLeftColor: op.color, position: 'relative' }}>
+                  {hasTV && <span style={{ position: 'absolute', top: '-8px', right: '10px', backgroundColor: '#9333EA', color: 'white', fontSize: '0.65rem', padding: '0.2rem 0.5rem', borderRadius: '4px', fontWeight: 'bold' }}>📺 CANAL+</span>}
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                       <img src={op.logo} alt={op.name} style={{ height: '24px', maxWidth: '60px', objectFit: 'contain' }} />

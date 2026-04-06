@@ -20,7 +20,7 @@ const ComparateurFAI = () => {
     },
     ora: {
       name: 'Ora',
-      logo: '🟠',
+      logo: 'https://www.ora.pf/wp-content/uploads/svg/ora.svg',
       color: '#005528',
       tagline: "Pionnier de l'internet sans ligne fixe",
       description: 'Premier à proposer internet sans ligne téléphonique depuis 2011',
@@ -33,7 +33,7 @@ const ComparateurFAI = () => {
     },
     vodafone: {
       name: 'Vodafone',
-      logo: '🔴',
+      logo: 'https://www.vodafone.pf/images/logo.png',
       color: '#E60000',
       tagline: "La puissance d'un réseau mondial",
       description: 'Entreprise 100% polynésienne avec expertise internationale',

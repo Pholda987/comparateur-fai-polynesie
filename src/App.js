@@ -154,8 +154,6 @@ const App = () => {
                 </a>
               </div>
             ))}
-         {[{ id: 'fibre', label: '🌐 Fibre' }, { id: 'fibrePro', label: '🏢 Fibre PRO' }, { id: 'box4g', label: '📡 Box 4G/5G' }, { id: 'mobile', label: '📱 Mobile' }].map(tab => (
-        </section>
 
         {/* Offres */}
         <section style={styles.section}>

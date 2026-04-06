@@ -39,22 +39,28 @@ const App = () => {
 
   const offers = {
     fibre: [
-      { operator: 'vini', name: 'Vinibox POP', speed: '30 Mb/s', price: 6100, data: 'Illimité', features: ['Appels fixes illimités', 'TV en option'] },
-      { operator: 'vini', name: 'Vinibox UP', speed: '200 Mb/s', price: 9000, data: 'Illimité', features: ['Appels internationaux', 'ViniSPOT'] },
-      { operator: 'ora', name: 'Ora Fibre', speed: '50 Mb/s', price: 5990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6'] },
-      { operator: 'vodafone', name: 'VodaFibre', speed: '100 Mb/s', price: 9900, data: 'Illimité', features: ['Secours 4G inclus'] },
+      { operator: 'vini', name: 'Vinibox POP', download: '100', upload: '50', price: 6100, data: 'Illimité', features: ['Appels fixes illimités', 'TV en option'] },
+      { operator: 'vini', name: 'Vinibox UP', download: '300', upload: '150', price: 9000, data: 'Illimité', features: ['Appels internationaux', 'ViniSPOT'] },
+      { operator: 'ora', name: 'Ora Fibre Power', download: '50', upload: '10', price: 6990, data: 'Illimité', features: ['Sans ligne fixe', 'Modem Wi-Fi 6'] },
+      { operator: 'ora', name: 'Ora Fibre Max', download: '200', upload: '100', price: 9990, data: 'Illimité', features: ['Sans ligne fixe', 'Ultra rapide'] },
+      { operator: 'vodafone', name: 'VodaFibre', download: '100', upload: '50', price: 9900, data: 'Illimité', features: ['Secours 4G inclus'] },
     ],
     box4g: [
-      { operator: 'ora', name: 'Ora Box Confort', speed: '50 Mb/s', price: 4995, data: '150 Go', features: ['Box 4G+ offerte'] },
-      { operator: 'vodafone', name: 'Vodasurf', speed: '8 Mb/s', price: 4900, data: '100 Go', features: ['Sans ligne fixe'] },
-      { operator: 'vodafone', name: 'Vodasurf Supreme', speed: '200 Mb/s', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
-      { operator: 'vini', name: 'Vinibox 4G', speed: '50 Mb/s', price: 5500, data: '100 Go', features: ['Couverture étendue'] },
+      { operator: 'ora', name: 'Ora Box Classik', download: '30', upload: '10', price: 4995, data: '200 Go', features: ['Box 4G+ offerte'] },
+      { operator: 'ora', name: 'Ora Box Confort', download: '30', upload: '10', price: 6995, data: '400 Go', features: ['Box 4G+ offerte'] },
+      { operator: 'ora', name: 'Ora Box No Limit', download: '50', upload: '10', price: 8995, data: 'Illimité', features: ['5G ready'] },
+      { operator: 'vodafone', name: 'Vodasurf', download: '30', upload: '10', price: 4900, data: '100 Go', features: ['Sans ligne fixe'] },
+      { operator: 'vodafone', name: 'Vodasurf Supreme', download: '200', upload: '100', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
+      { operator: 'vini', name: 'Vinibox 4G', download: '50', upload: '20', price: 5500, data: '100 Go', features: ['Couverture étendue'] },
     ],
     mobile: [
-      { operator: 'vini', name: 'Vini Iti', speed: '4G', price: 450, data: '1 Go', features: ['SMS illimités'] },
-      { operator: 'vini', name: 'Vini Nui 20 Go', speed: '5G', price: 2700, data: '20 Go', features: ['Appels illimités'] },
-      { operator: 'ora', name: 'Ora Mobile', speed: '5G', price: 2500, data: '30 Go', features: ['Appels illimités'] },
-      { operator: 'vodafone', name: 'Prestige', speed: '5G', price: 4900, data: '120 Go', features: ['Appels internationaux 28 pays'] },
+      { operator: 'vini', name: 'Vini Iti', download: '4G', upload: '-', price: 450, data: '1 Go', features: ['SMS illimités'] },
+      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G/5G', upload: '-', price: 1200, data: '5 Go', features: ['Appels fixes illimités'] },
+      { operator: 'vini', name: 'Vini Nui 20 Go', download: '5G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités'] },
+      { operator: 'ora', name: 'Ora Access', download: '4G', upload: '-', price: 995, data: '20 Go', features: ['Sans engagement'] },
+      { operator: 'ora', name: 'Ora Enjoy 5G', download: '5G', upload: '-', price: 2995, data: '80 Go', features: ['Appels illimités'] },
+      { operator: 'vodafone', name: 'Smile', download: '4G', upload: '-', price: 1500, data: '10 Go', features: ['Report crédits'] },
+      { operator: 'vodafone', name: 'Prestige', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels internationaux 28 pays'] },
     ],
   };
 
@@ -132,6 +138,7 @@ const App = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
             {filteredOffers.sort((a, b) => a.price - b.price).map((offer, i) => {
               const op = operators[offer.operator];
+              const isMobile = activeTab === 'mobile';
               return (
                 <div key={i} style={{ ...styles.offerCard, borderLeftColor: op.color }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
@@ -147,14 +154,20 @@ const App = () => {
                       <div style={{ fontSize: '0.7rem', color: '#999' }}>/mois</div>
                     </div>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', marginBottom: '0.75rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr 1fr' : '1fr 1fr 1fr', gap: '0.5rem', marginBottom: '0.75rem' }}>
                     <div style={{ backgroundColor: '#F3F4F6', padding: '0.4rem', borderRadius: '0.4rem', textAlign: 'center' }}>
-                      <div style={{ fontSize: '0.7rem', color: '#888' }}>Débit</div>
-                      <div style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>{offer.speed}</div>
+                      <div style={{ fontSize: '0.65rem', color: '#888' }}>{isMobile ? 'Réseau' : '↓ Download'}</div>
+                      <div style={{ fontWeight: 'bold', fontSize: '0.85rem' }}>{offer.download}{!isMobile && ' Mb/s'}</div>
                     </div>
+                    {!isMobile && (
+                      <div style={{ backgroundColor: '#F3F4F6', padding: '0.4rem', borderRadius: '0.4rem', textAlign: 'center' }}>
+                        <div style={{ fontSize: '0.65rem', color: '#888' }}>↑ Upload</div>
+                        <div style={{ fontWeight: 'bold', fontSize: '0.85rem' }}>{offer.upload} Mb/s</div>
+                      </div>
+                    )}
                     <div style={{ backgroundColor: '#F3F4F6', padding: '0.4rem', borderRadius: '0.4rem', textAlign: 'center' }}>
-                      <div style={{ fontSize: '0.7rem', color: '#888' }}>Data</div>
-                      <div style={{ fontWeight: 'bold', fontSize: '0.9rem' }}>{offer.data}</div>
+                      <div style={{ fontSize: '0.65rem', color: '#888' }}>Data</div>
+                      <div style={{ fontWeight: 'bold', fontSize: '0.85rem' }}>{offer.data}</div>
                     </div>
                   </div>
                   {offer.features.map((f, j) => <div key={j} style={{ fontSize: '0.75rem', color: '#666' }}>✓ {f}</div>)}

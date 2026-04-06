@@ -74,14 +74,14 @@ const App = () => {
       { operator: 'vini', name: 'Vini Reva 150 Go', download: '5G', upload: '-', price: 7900, data: '150 Go', features: ['Appels illimités', '12h international', 'eSIM offerte 24 mois'] },
       { operator: 'vini', name: 'Vini Reva 250 Go', download: '5G', upload: '-', price: 9900, data: '250 Go', features: ['Appels illimités', 'International illimité', 'eSIM offerte 24 mois'] },
       // ORA MOBILE
-      { operator: 'ora', name: 'Ora Access', download: '4G', upload: '-', price: 995, data: '20 Go', features: ['2h appels locaux', 'SMS illimités', 'Sans engagement'] },
-      { operator: 'ora', name: 'Ora Like 5G', download: '5G', upload: '-', price: 1995, data: '50 Go', features: ['Appels illimités', '2h international', 'SMS illimités'] },
-      { operator: 'ora', name: 'Ora Enjoy 5G', download: '5G', upload: '-', price: 2995, data: '80 Go', features: ['Appels illimités', '10h international', 'SMS illimités'] },
-      { operator: 'ora', name: 'Ora Smart 5G', download: '5G', upload: '-', price: 4995, data: '120 Go', features: ['Appels illimités', 'International illimité', '2 Go roaming'] },
+      { operator: 'ora', name: 'Ora Access', download: '4G', upload: '-', price: 995, data: '20 Go', features: ['2h appels locaux', 'SMS illimités', 'Sans engagement', 'Disponible en eSIM'] },
+      { operator: 'ora', name: 'Ora Like 5G', download: '5G', upload: '-', price: 1995, data: '50 Go', features: ['Appels illimités', '2h international', 'SMS illimités', 'Disponible en eSIM'] },
+      { operator: 'ora', name: 'Ora Enjoy 5G', download: '5G', upload: '-', price: 2995, data: '80 Go', features: ['Appels illimités', '10h international', 'SMS illimités', 'Disponible en eSIM'] },
+      { operator: 'ora', name: 'Ora Smart 5G', download: '5G', upload: '-', price: 4995, data: '120 Go', features: ['Appels illimités', 'International illimité', '2 Go roaming', 'Disponible en eSIM'] },
       // VODAFONE MOBILE
-      { operator: 'vodafone', name: 'Smile x2 Base', download: '4G', upload: '-', price: 500, data: '12 Go', features: ['2h appels', 'SMS illimités', 'Personnalisable'] },
-      { operator: 'vodafone', name: 'Smile x2 25 Go', download: '4G', upload: '-', price: 2200, data: '25 Go', features: ['8h appels', 'SMS illimités', 'Personnalisable'] },
-      { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels illimités', 'International illimité', 'SMS illimités', 'Personnalisable'] },
+      { operator: 'vodafone', name: 'Smile x2 Base', download: '4G', upload: '-', price: 500, data: '12 Go', features: ['2h appels', 'SMS illimités', 'Personnalisable', 'Disponible en eSIM'] },
+      { operator: 'vodafone', name: 'Smile x2 25 Go', download: '4G', upload: '-', price: 2200, data: '25 Go', features: ['8h appels', 'SMS illimités', 'Personnalisable', 'Disponible en eSIM'] },
+      { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels illimités', 'International illimité', 'SMS illimités', 'Personnalisable', 'Disponible en eSIM'] },
     ],
     fibrePro: [
       // VINI PRO

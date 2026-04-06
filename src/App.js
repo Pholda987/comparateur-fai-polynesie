@@ -217,7 +217,7 @@ const App = () => {
         {/* Latence Gaming */}
         <section style={styles.section}>
           <div style={{ background: 'linear-gradient(135deg, #581C87, #312E81)', borderRadius: '1rem', padding: '1.5rem', color: 'white' }}>
-            <h2 style={{ marginBottom: '1rem' }}>🎮 Latence Gaming (Ping depuis Paea)</h2>
+            <h2 style={{ marginBottom: '1rem' }}>🎮 Latence Gaming (Ping depuis Tahiti)</h2>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
               <thead>
                 <tr style={{ borderBottom: '1px solid #6B21A8' }}>

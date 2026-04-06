@@ -7,7 +7,7 @@ const ComparateurFAI = () => {
   const operators = {
     vini: {
       name: 'Vini',
-      logo: '🔵',
+      logo: 'https://www.vini.pf/themes/vini/images/logo.svg',
       color: '#dc001c',
       tagline: 'Opérateur historique - Réseau le plus étendu',
       description: "Filiale de l'OPT, couverture sur tous les archipels",

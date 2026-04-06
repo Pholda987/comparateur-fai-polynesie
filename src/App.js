@@ -24,7 +24,7 @@ const App = () => {
     vodafone: {
       name: 'Vodafone',
       logo: 'https://www.vodafone.pf/images/logo.png',
-      color: '#F28705',
+      color: '#8C1F28',
       tagline: "La puissance d'un réseau mondial",
       description: 'Entreprise 100% polynésienne avec expertise internationale',
       coverage: 3, speed: 4, price: 4, support: 5,

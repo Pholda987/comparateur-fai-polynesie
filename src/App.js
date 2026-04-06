@@ -83,6 +83,15 @@ const App = () => {
       { operator: 'vodafone', name: 'Smile x2 25 Go', download: '4G', upload: '-', price: 2200, data: '25 Go', features: ['8h appels', 'SMS illimités', 'Personnalisable'] },
       { operator: 'vodafone', name: 'Prestige x2', download: '5G', upload: '-', price: 4900, data: '120 Go', features: ['Appels illimités', 'International illimité', 'SMS illimités', 'Personnalisable'] },
     ],
+    fibrePro: [
+      // VINI PRO
+      { operator: 'vini', name: 'Vinibox PRO', download: '400', upload: '150', price: 13000, data: 'Illimité', features: ['2h appels internationaux', 'Appels Vinibox illimités', 'Appels fixes PF illimités', 'Prix HT'] },
+      { operator: 'vini', name: 'Vinibox PRO OPTIMAL', download: '800', upload: '200', price: 25000, data: 'Illimité', features: ['3h appels internationaux', 'Appels Vinibox illimités', 'Appels fixes PF illimités', 'Prix HT'] },
+      // ORA BUSINESS
+      { operator: 'ora', name: 'Ora Business Fibre 300', download: '300', upload: '100', price: 14900, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Secours 5G automatique', 'Prix HT'] },
+      { operator: 'ora', name: 'Ora Business Fibre 500', download: '500', upload: '100', price: 25000, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Secours 5G automatique', 'Prix HT'] },
+      { operator: 'ora', name: 'Ora Business Fibre 500+', download: '500', upload: '500', price: 40000, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Secours 5G automatique', 'Débit symétrique', 'Prix HT'] },
+    ],
   };
 
   const styles = {
@@ -145,7 +154,7 @@ const App = () => {
                 </a>
               </div>
             ))}
-          </div>
+         {[{ id: 'fibre', label: '🌐 Fibre' }, { id: 'fibrePro', label: '🏢 Fibre PRO' }, { id: 'box4g', label: '📡 Box 4G/5G' }, { id: 'mobile', label: '📱 Mobile' }].map(tab => (
         </section>
 
         {/* Offres */}
@@ -160,7 +169,11 @@ const App = () => {
             ))}
             {selectedOperator && <button onClick={() => setSelectedOperator(null)} style={{ ...styles.button, backgroundColor: '#EEE' }}>✕ Voir tous</button>}
           </div>
-          
+          const isPro = activeTab === 'fibrePro';
+...
+{isPro && <span style={{...}}>🏢 PRO</span>}
+...
+<div style={{ fontSize: '0.7rem', color: '#999' }}>{isPro ? 'HT /mois' : '/mois'}</div>
           {/* Compteur */}
           <p style={{ fontSize: '0.9rem', color: '#666', marginBottom: '1rem' }}>
             {filteredOffers.length} offre{filteredOffers.length > 1 ? 's' : ''} {selectedOperator ? `chez ${operators[selectedOperator].name}` : 'disponibles'}

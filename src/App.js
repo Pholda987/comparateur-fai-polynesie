@@ -85,12 +85,12 @@ const App = () => {
     ],
     fibrePro: [
       // VINI PRO
-      { operator: 'vini', name: 'Vinibox PRO', download: '400', upload: '150', price: 13000, data: 'Illimité', features: ['2h appels internationaux', 'Appels Vinibox illimités', 'Appels fixes PF illimités', 'Option adresse IP fixe : 3 000 F HT/mois', 'Secours 4G automatique', 'Prix HT'] },
-      { operator: 'vini', name: 'Vinibox PRO OPTIMAL', download: '800', upload: '200', price: 25000, data: 'Illimité', features: ['3h appels internationaux', 'Appels Vinibox illimités', 'Appels fixes PF illimités', 'Option adresse IP fixe : 3 000 F HT/mois', 'Secours 4G automatique', 'Prix HT'] },
+      { operator: 'vini', name: 'Vinibox PRO', download: '400', upload: '150', price: 13000, data: 'Illimité', features: ['2h appels internationaux', 'Appels Vinibox illimités', 'Appels fixes PF illimités', 'Option adresse IP fixe', 'Secours 4G automatique', 'Prix HT'] },
+      { operator: 'vini', name: 'Vinibox PRO OPTIMAL', download: '800', upload: '200', price: 25000, data: 'Illimité', features: ['3h appels internationaux', 'Appels Vinibox illimités', 'Appels fixes PF illimités', 'Option adresse IP fixe', 'Secours 4G automatique', 'Prix HT'] },
       // ORA BUSINESS
-      { operator: 'ora', name: 'Ora Business Fibre 300', download: '300', upload: '100', price: 14900, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Secours 5G automatique', 'Prix HT'] },
-      { operator: 'ora', name: 'Ora Business Fibre 500', download: '500', upload: '100', price: 25000, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Secours 5G automatique', 'Prix HT'] },
-      { operator: 'ora', name: 'Ora Business Fibre 500+', download: '500', upload: '500', price: 40000, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Secours 5G automatique', 'Débit symétrique', 'Prix HT'] },
+      { operator: 'ora', name: 'Ora Business Fibre 300', download: '300', upload: '100', price: 14900, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Option adresse IP fixe', 'Secours 5G automatique', 'Prix HT'] },
+      { operator: 'ora', name: 'Ora Business Fibre 500', download: '500', upload: '100', price: 25000, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Option adresse IP fixe', 'Secours 5G automatique', 'Prix HT'] },
+      { operator: 'ora', name: 'Ora Business Fibre 500+', download: '500', upload: '500', price: 40000, data: 'Illimité', features: ['Contact dédié', 'SAV priorisé', 'Option adresse IP fixe', 'Secours 5G automatique', 'Débit symétrique', 'Prix HT'] },
     ],
   };
 

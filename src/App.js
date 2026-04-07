@@ -63,7 +63,7 @@ const App = () => {
       { operator: 'vodafone', name: 'Vodasurf Master', download: '30', upload: '10', price: 4900, data: '200 Go', features: ['5G', 'Illimité 00h-06h'] },
       { operator: 'vodafone', name: 'Vodasurf Elite', download: '30', upload: '10', price: 6900, data: '300 Go', features: ['5G', 'Illimité 00h-06h'] },
       { operator: 'vodafone', name: 'Vodasurf Supreme', download: '30', upload: '10', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
-      { operator: 'vodafone', name: 'Vodasurf Ultra', download: '200', upload: '100', price: 10900, data: 'Illimité', features: ['5G', 'Équivalent fibre', 'Routeur offert'] },
+      { operator: 'vodafone', name: 'Vodasurf Ultra', download: '200', upload: '100', price: 10900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
     ],
     mobile: [
       // VINI MOBILE

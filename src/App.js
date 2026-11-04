@@ -60,13 +60,14 @@ const OfferCard = ({ offer, tab, reva, best }) => {
   const ratio = !isMobile && down ? Math.round(price / down) : null;
 
   return (
-    <article className="offer" style={{ '--op': op.color }}>
+    <article className={offer.discontinued ? 'offer offer-retired' : 'offer'} style={{ '--op': op.color }}>
       <header className="offer-head">
         <span className="op-chip">
           <img src={op.logo} alt="" />
           {op.name}
         </span>
         <div className="tags">
+          {offer.discontinued && <span className="tag tag-retired">N&apos;est plus commercialisé</span>}
           {best && <span className="tag tag-best">Meilleur prix par Mb/s en illimité</span>}
           {hasTV && <span className="tag">CANAL+</span>}
           {isPro && <span className="tag">Prix HT</span>}
@@ -85,6 +86,7 @@ const OfferCard = ({ offer, tab, reva, best }) => {
         )}
       </div>
       {revaActive && <p className="reva-note">Avec Vini Reva : {offer.reva.note}</p>}
+      {offer.discontinued && <p className="retired-note">{offer.discontinued}</p>}
 
       {isMobile ? (
         <dl className="specs">
@@ -145,7 +147,7 @@ const App = () => {
       sorted.sort((a, b) => eff(a) - eff(b));
     }
     let bestName = null;
-    const unlimited = items.filter((o) => o.data === 'Illimité' && num(o.download));
+    const unlimited = items.filter((o) => o.data === 'Illimité' && num(o.download) && !o.discontinued);
     if (!isMobile && unlimited.length > 1) {
       bestName = unlimited.reduce((best, o) =>
         eff(o) / num(o.download) < eff(best) / num(best.download) ? o : best

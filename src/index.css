@@ -175,6 +175,10 @@ button, select, input { font: inherit; color: inherit; }
 .op-chip img { height: 15px; max-width: 46px; object-fit: contain; }
 .tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .tag { font-size: 0.74rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; color: var(--texte-2); border: 1px solid var(--trait-fort); }
+.tag-retired { border-style: dashed; color: var(--texte-2); }
+.offer-retired { border-style: dashed; background: rgba(18, 48, 150, 0.07); }
+.offer-retired .price, .offer-retired .offer-name { opacity: 0.7; }
+.retired-note { color: var(--texte-2); font-size: 0.84rem; margin-top: 6px; padding: 8px 10px; border-left: 2px solid var(--blanc); background: rgba(255, 255, 255, 0.05); border-radius: 0 8px 8px 0; }
 .tag-best { background: var(--bleu); border-color: var(--blanc); color: var(--blanc); }
 
 .offer-name { font-weight: 600; font-size: 1.15rem; line-height: 1.25; color: var(--texte-2); }

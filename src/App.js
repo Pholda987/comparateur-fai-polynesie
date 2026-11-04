@@ -53,12 +53,10 @@ const App = () => {
       { operator: 'ora', name: 'Ora Box No Limit Confort', download: '50', upload: '10', price: 8995, data: 'Illimité', features: ['Box 4G+ offerte', '4G/5G'] },
       { operator: 'ora', name: 'Ora Box No Limit Intense', download: '200', upload: '100', price: 11995, data: 'Illimité', features: ['Box 4G+ offerte', '5G'] },
       // VINI BOX 4G/5G
-      { operator: 'vini', name: 'Vinibox 4G 30 Go', download: '10', upload: '2', price: 1500, data: '30 Go', features: ['Sans engagement', 'Débit débridé en option'] },
-      { operator: 'vini', name: 'Vinibox 4G 60 Go', download: '10', upload: '2', price: 3500, data: '60 Go', features: ['Sans engagement', 'Débit débridé en option'] },
-      { operator: 'vini', name: 'Vinibox 4G 100 Go', download: '10', upload: '2', price: 4500, data: '100 Go', features: ['Sans engagement', 'Débit débridé en option'] },
-      { operator: 'vini', name: 'Vinibox 4G/5G 200 Go', download: '20', upload: '10', price: 7900, data: '200 Go', features: ['5G', 'Débit débridé en option'] },
-      { operator: 'vini', name: 'Vinibox 4G/5G Illimité Standard', download: '20', upload: '10', price: 8900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Engagement 24 mois'] },
-      { operator: 'vini', name: 'Vinibox 4G/5G Illimité Options', download: '100', upload: '60', price: 11900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Débit débridé', 'Maintien du débit'] },
+      { operator: 'vini', name: 'Vinibox 4G/5G 50 Go', download: '20', upload: '10', price: 1500, data: '50 Go', features: ['Avec ou sans engagement', 'Débit débridé en option'] },
+      { operator: 'vini', name: 'Vinibox 4G/5G 150 Go', download: '20', upload: '10', price: 4500, data: '150 Go', features: ['Avec ou sans engagement', 'Débit débridé en option', 'Avec Vini Reva : +50 Go offerts (engagement 24 mois)'] },
+      { operator: 'vini', name: 'Vinibox 4G/5G Illimité', download: '50', upload: '20', price: 8900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Engagement 24 mois (12 mois ou sans dispo)', 'Débit débridé et Maintien du débit en option', 'Avec Vini Reva : Maintien du débit offert (engagement 24 mois)'] },
+      { operator: 'vini', name: 'Vinibox 4G/5G MAX illimité', download: '200', upload: '100', price: 11900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Engagement 24 mois (12 mois ou sans dispo)', 'Débit débridé et Maintien du débit inclus', 'Avec Vini Reva : 9 900 F (−2 000 F, engagement 24 mois)'] },
       // VODAFONE VODASURF
       { operator: 'vodafone', name: 'Vodasurf Master', download: '30', upload: '10', price: 4900, data: '200 Go', features: ['5G', 'Illimité 00h-06h'] },
       { operator: 'vodafone', name: 'Vodasurf Elite', download: '30', upload: '10', price: 6900, data: '300 Go', features: ['5G', 'Illimité 00h-06h'] },

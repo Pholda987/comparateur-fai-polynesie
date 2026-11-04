@@ -275,7 +275,7 @@ const App = () => {
 
       <footer className="footer">
         <p className="mauruuru">Mauruuru roa</p>
-        <p>Box 4G/5G Vini mises à jour le 04/11/2026. Autres offres relevées le 05/04/2026.</p>
+        <p>Box 4G/5G Vini et fibre PRO Ora mises à jour le 04/11/2026. Autres offres relevées le 05/04/2026.</p>
         <p>Sources : vini.pf, ora.pf, vodafone.pf. Vérifiez toujours l'éligibilité de votre adresse auprès de l'opérateur.</p>
       </footer>
     </div>

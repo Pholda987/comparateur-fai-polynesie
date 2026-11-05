@@ -29,11 +29,11 @@ export const offers = {
     fibre: [
       // VINI FIBRE
       { operator: 'vini', name: 'Vinibox POP', download: '30', upload: '10', price: 6100, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box'] },
-      { operator: 'vini', name: 'Vinibox POP + TV', download: '30', upload: '10', price: 8600, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box', 'CANAL+ inclus'] },
+      { operator: 'vini', name: 'Vinibox POP + TV', internetPrice: 6100, download: '30', upload: '10', price: 8600, data: 'Illimité', features: ['ViniSPOT 1h', 'Appels illimités entre box', 'CANAL+ inclus'] },
       { operator: 'vini', name: 'Vinibox UP', download: '200', upload: '75', price: 9000, data: 'Illimité', features: ['ViniSPOT 1h', '2h appels internationaux', 'Appels illimités entre box'] },
-      { operator: 'vini', name: 'Vinibox UP + TV', download: '200', upload: '75', price: 9900, data: 'Illimité', features: ['ViniSPOT 1h', '2h appels internationaux', 'CANAL+ inclus'] },
+      { operator: 'vini', name: 'Vinibox UP + TV', internetPrice: 9000, download: '200', upload: '75', price: 9900, data: 'Illimité', features: ['ViniSPOT 1h', '2h appels internationaux', 'CANAL+ inclus'] },
       { operator: 'vini', name: 'Vinibox JET', download: '300', upload: '100', price: 12900, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'Appels illimités entre box'] },
-      { operator: 'vini', name: 'Vinibox JET + TV', download: '300', upload: '100', price: 13800, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'CANAL+ inclus'] },
+      { operator: 'vini', name: 'Vinibox JET + TV', internetPrice: 12900, download: '300', upload: '100', price: 13800, data: 'Illimité', features: ['ViniSPOT 1h', '3h appels internationaux', 'CANAL+ inclus'] },
       // ORA FIBRE
       { operator: 'ora', name: 'Ora Fibre Essentiel', download: '10', upload: '10', price: 5990, data: 'Illimité', features: ['Illimité 24h/24'] },
       { operator: 'ora', name: 'Ora Fibre Power', discontinued: 'N\'apparaît plus sur ora.pf depuis novembre 2026. Vérifiez sa disponibilité auprès d\'Ora.', download: '50', upload: '10', price: 6990, data: 'Illimité', features: ['Modem Wi-Fi 6', 'Aide raccordement 50 000 F'] },

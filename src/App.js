@@ -21,6 +21,9 @@ const num = (v) => {
   return Number.isFinite(n) ? n : null;
 };
 
+// Prix servant au calcul du prix par Mb/s : hors TV pour les offres + TV
+const ratioPrice = (o, reva) => (reva && o.reva ? o.reva.price : o.internetPrice ?? o.price);
+
 const fmt = (n) => n.toLocaleString('fr-FR').replace(/ /g, ' ');
 
 const barWidth = (v) => {
@@ -57,7 +60,7 @@ const OfferCard = ({ offer, tab, reva, best }) => {
   const price = revaActive ? offer.reva.price : offer.price;
   const data = revaActive && offer.reva.data ? offer.reva.data : offer.data;
   const down = num(offer.download);
-  const ratio = !isMobile && down ? Math.round(price / down) : null;
+  const ratio = !isMobile && down ? Math.round(ratioPrice(offer, revaActive) / down) : null;
 
   return (
     <article className={offer.discontinued ? 'offer offer-retired' : 'offer'} style={{ '--op': op.color }}>
@@ -113,7 +116,7 @@ const OfferCard = ({ offer, tab, reva, best }) => {
           </div>
           <dl className="specs">
             <div><dt>Data</dt><dd>{data}</dd></div>
-            {ratio !== null && <div><dt>Prix par Mb/s</dt><dd>{fmt(ratio)} F</dd></div>}
+            {ratio !== null && <div><dt>{offer.internetPrice ? 'Prix par Mb/s, hors TV' : 'Prix par Mb/s'}</dt><dd>{fmt(ratio)} F</dd></div>}
           </dl>
         </>
       )}
@@ -142,7 +145,7 @@ const App = () => {
     if (sort === 'speed' && !isMobile) {
       sorted.sort((a, b) => (num(b.download) || 0) - (num(a.download) || 0) || eff(a) - eff(b));
     } else if (sort === 'ratio' && !isMobile) {
-      sorted.sort((a, b) => eff(a) / (num(a.download) || 1) - eff(b) / (num(b.download) || 1));
+      sorted.sort((a, b) => ratioPrice(a, revaOn) / (num(a.download) || 1) - ratioPrice(b, revaOn) / (num(b.download) || 1));
     } else {
       sorted.sort((a, b) => eff(a) - eff(b));
     }
@@ -150,7 +153,7 @@ const App = () => {
     const unlimited = items.filter((o) => o.data === 'Illimité' && num(o.download) && !o.discontinued);
     if (!isMobile && unlimited.length > 1) {
       bestName = unlimited.reduce((best, o) =>
-        eff(o) / num(o.download) < eff(best) / num(best.download) ? o : best
+        ratioPrice(o, revaOn) / num(o.download) < ratioPrice(best, revaOn) / num(best.download) ? o : best
       ).name;
     }
     return { sorted, bestName };

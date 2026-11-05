@@ -61,11 +61,11 @@ export const offers = {
     mobile: [
       // VINI MOBILE
       { operator: 'vini', name: 'Vini Iti', download: '4G', upload: '-', price: 450, data: '100 Mo', features: ['1h appels', 'SMS illimités', '+10 Go bonus jeune', 'Disponible en eSIM'] },
-      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G', upload: '-', price: 1200, data: '5 Go', features: ['2h appels', 'SMS illimités', '+10 Go bonus jeune', 'Disponible en eSIM'] },
+      { operator: 'vini', name: 'Vini Nui 5 Go', download: '4G', upload: '-', price: 1200, data: '5 Go', features: ['2h appels', 'Appels illimités vers les fixes', 'SMS illimités', '+10 Go bonus jeune', 'Disponible en eSIM'] },
       { operator: 'vini', name: 'Vini Nui 20 Go', download: '4G', upload: '-', price: 2700, data: '20 Go', features: ['Appels illimités', 'SMS illimités', '+10 Go bonus jeune', 'Disponible en eSIM'] },
-      { operator: 'vini', name: 'Vini Reva 80 Go', download: '5G', upload: '-', price: 4900, data: '80 Go', features: ['Appels illimités', '6h international', 'eSIM offerte 24 mois'] },
-      { operator: 'vini', name: 'Vini Reva 150 Go', download: '5G', upload: '-', price: 7900, data: '150 Go', features: ['Appels illimités', '12h international', 'eSIM offerte 24 mois'] },
-      { operator: 'vini', name: 'Vini Reva 250 Go', download: '5G', upload: '-', price: 9900, data: '250 Go', features: ['Appels illimités', 'International illimité', 'eSIM offerte 24 mois'] },
+      { operator: 'vini', name: 'Vini Reva 80 Go', download: '5G', upload: '-', price: 4900, data: '80 Go', features: ['Appels illimités', '6h international', 'eSIM offerte 24 mois', 'Jusqu\'à 17 000 F de remise sur un téléphone'] },
+      { operator: 'vini', name: 'Vini Reva 150 Go', download: '5G', upload: '-', price: 7900, data: '150 Go', features: ['Appels illimités', '12h international', 'eSIM offerte 24 mois', 'Jusqu\'à 30 000 F de remise sur un téléphone'] },
+      { operator: 'vini', name: 'Vini Reva 250 Go', download: '5G', upload: '-', price: 9900, data: '250 Go', features: ['Appels illimités', 'International illimité', 'eSIM offerte 24 mois', 'Jusqu\'à 35 000 F de remise sur un téléphone'] },
       // ORA MOBILE
       { operator: 'ora', name: 'Ora Access', download: '4G', upload: '-', price: 995, data: '20 Go', features: ['2h appels locaux', 'SMS illimités', 'Sans engagement', 'Disponible en eSIM'] },
       { operator: 'ora', name: 'Ora Like 5G', download: '5G', upload: '-', price: 1995, data: '50 Go', features: ['Appels illimités', '2h international', 'SMS illimités', 'Disponible en eSIM'] },

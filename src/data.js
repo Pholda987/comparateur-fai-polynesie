@@ -53,10 +53,10 @@ export const offers = {
       { operator: 'vini', name: 'Vinibox 4G/5G Illimité', reva: { price: 8900, note: 'Maintien du débit offert' }, download: '50', upload: '20', price: 8900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Engagement 24 mois (12 mois ou sans dispo)', 'Débit débridé et Maintien du débit en option'] },
       { operator: 'vini', name: 'Vinibox 4G/5G MAX illimité', reva: { price: 9900, note: '−2 000 F par mois' }, download: '200', upload: '100', price: 11900, data: 'Illimité', features: ['Routeur 4G/5G offert', 'Engagement 24 mois (12 mois ou sans dispo)', 'Débit débridé et Maintien du débit inclus'] },
       // VODAFONE VODASURF
-      { operator: 'vodafone', name: 'Vodasurf Master', download: '30', upload: '10', price: 4900, data: '200 Go', features: ['5G', 'Illimité 00h-06h'] },
-      { operator: 'vodafone', name: 'Vodasurf Elite', download: '30', upload: '10', price: 6900, data: '300 Go', features: ['5G', 'Illimité 00h-06h'] },
-      { operator: 'vodafone', name: 'Vodasurf Supreme', download: '30', upload: '10', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
-      { operator: 'vodafone', name: 'Vodasurf Ultra', download: '200', upload: '100', price: 10900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
+      { operator: 'vodafone', name: 'Vodasurf Master', download: '50', upload: '10', price: 4900, data: '200 Go', features: ['5G', 'Illimité 00h-06h'] },
+      { operator: 'vodafone', name: 'Vodasurf Elite', download: '50', upload: '10', price: 6900, data: '400 Go', features: ['5G', 'Illimité 00h-06h'] },
+      { operator: 'vodafone', name: 'Vodasurf Supreme', download: '50', upload: '10', price: 8900, data: 'Illimité', features: ['5G', 'Routeur offert'] },
+      { operator: 'vodafone', name: 'Vodasurf Ultra', download: '200', upload: '100', price: 10900, data: 'Illimité', features: ['5G', 'Routeur offert', 'Nouveau : disponible sur Moorea', 'Compatible uniquement avec un routeur 4G/5G'] },
     ],
     mobile: [
       // VINI MOBILE

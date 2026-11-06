@@ -172,7 +172,7 @@ button, select, input { font: inherit; color: inherit; }
   background: var(--blanc); color: #101736; border-radius: 6px;
   padding: 3px 8px; font-size: 0.78rem; font-weight: 700;
 }
-.op-chip img { height: 15px; max-width: 46px; object-fit: contain; }
+.op-chip img { width: 18px; height: 18px; border-radius: 4px; object-fit: cover; }
 .tags { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .tag { font-size: 0.74rem; font-weight: 600; padding: 2px 9px; border-radius: 999px; color: var(--texte-2); border: 1px solid var(--trait-fort); }
 .tag-retired { border-style: dashed; color: var(--texte-2); }
@@ -218,8 +218,8 @@ button, select, input { font: inherit; color: inherit; }
   padding: 20px; display: flex; flex-direction: column; gap: 14px;
 }
 .op-top { display: flex; align-items: center; gap: 12px; }
-.op-logo { background: var(--blanc); border-radius: 8px; padding: 8px 10px; display: inline-flex; }
-.op-logo img { height: 26px; max-width: 80px; object-fit: contain; }
+.op-logo { background: var(--blanc); border-radius: 10px; width: 48px; height: 48px; flex: none; display: inline-flex; align-items: center; justify-content: center; overflow: hidden; }
+.op-logo img { width: 100%; height: 100%; object-fit: cover; }
 .op h3 { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.02em; }
 .op-tag, .op-desc { color: var(--texte-2); font-size: 0.9rem; }
 .op-tag { color: var(--texte-3); }

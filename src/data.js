@@ -1,7 +1,7 @@
 export const operators = {
     vini: {
       name: 'Vini',
-      localLogo: '/logos/vini.svg',
+      localLogo: '/logos/vini.png',
       logo: 'https://www.vini.pf/themes/vini/images/logo.svg',
       color: '#dc001c',
       tagline: 'Opérateur historique',
@@ -9,7 +9,7 @@ export const operators = {
     },
     ora: {
       name: 'Ora',
-      localLogo: '/logos/ora.svg',
+      localLogo: '/logos/ora.png',
       logo: 'https://www.ora.pf/wp-content/uploads/svg/ora.svg',
       color: '#005528',
       tagline: "Pionnier de l'internet sans ligne fixe",

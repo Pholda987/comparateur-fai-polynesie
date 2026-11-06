@@ -1,5 +1,0 @@
-Déposez ici les logos des opérateurs :
-- vini.svg
-- ora.svg
-- vodafone.png
-Tant qu'un fichier manque, le site utilise le logo hébergé sur le site de l'opérateur.

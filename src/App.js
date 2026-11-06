@@ -14,6 +14,13 @@ const SORTS = [
   { id: 'ratio', label: 'Meilleur prix par Mb/s' },
 ];
 
+// Pages de connexion officielles, ouvertes dans un nouvel onglet
+const CLIENT_AREAS = {
+  vini: 'https://espace-client.vini.pf/login',
+  ora: 'https://espaceclient.ora.pf/',
+  vodafone: 'https://mon.vodafone.pf',
+};
+
 const MAX_SPEED = 1000; // échelle logarithmique des barres de débit
 
 const num = (v) => {
@@ -269,9 +276,14 @@ const App = () => {
                     <div key={l}><dt>{l}</dt><dd><Stars value={v} /></dd></div>
                   ))}
                 </dl>
-                <a className="op-link" href={`https://www.${id}.pf`} target="_blank" rel="noopener noreferrer">
-                  Voir le site {op.name}
-                </a>
+                <div className="op-actions">
+                  <a className="op-link op-link-primary" href={CLIENT_AREAS[id]} target="_blank" rel="noopener noreferrer">
+                    Mon espace client {op.name}
+                  </a>
+                  <a className="op-link" href={`https://www.${id}.pf`} target="_blank" rel="noopener noreferrer">
+                    Voir le site {op.name}
+                  </a>
+                </div>
               </article>
             ))}
           </div>

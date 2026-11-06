@@ -261,3 +261,5 @@ button, select, input { font: inherit; color: inherit; }
   .trace { max-height: 180px; }
   .grid { grid-template-columns: 1fr; }
 }
+
+.disclaimer { margin-top: 10px; max-width: 70ch; font-size: 0.8rem; color: var(--gris-bleu); }

@@ -294,6 +294,7 @@ const App = () => {
         <p className="mauruuru">Mauruuru roa</p>
         <p>Box 4G/5G Vini et fibre PRO Ora mises à jour le 04/11/2026, box 4G/5G Vodafone le 05/11/2026. Autres offres relevées le 05/04/2026.</p>
         <p>Sources : vini.pf, ora.pf, vodafone.pf. Vérifiez toujours l'éligibilité de votre adresse auprès de l'opérateur.</p>
+        <p className="disclaimer">Comparateur indépendant, non affilié à Vini, Ora ou Vodafone. Les noms et logos des opérateurs appartiennent à leurs détenteurs respectifs. Les prix sont donnés à titre indicatif : seules les conditions affichées par l'opérateur font foi.</p>
       </footer>
     </div>
   );

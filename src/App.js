@@ -39,13 +39,22 @@ const barWidth = (v) => {
   return Math.max(6, Math.min(100, (Math.log10(n) / Math.log10(MAX_SPEED)) * 100));
 };
 
-const Stars = ({ value }) => (
-  <span className="stars" aria-label={`${value} sur 5`}>
-    {[1, 2, 3, 4, 5].map((i) => (
-      <span key={i} className={i <= value ? 'star on' : 'star'} />
-    ))}
-  </span>
-);
+// Logo : copie locale (public/logos), sinon logo du site de l'opérateur, sinon son nom
+const OpLogo = ({ op, alt }) => {
+  const sources = [op.localLogo, op.logo].filter(Boolean);
+  const [i, setI] = useState(0);
+  if (i >= sources.length) return <span className="logo-fallback">{op.name}</span>;
+  return <img src={sources[i]} alt={alt} onError={() => setI(i + 1)} />;
+};
+
+// Chiffres factuels tirés des offres du comparateur (hors offres plus commercialisées)
+const operatorFacts = (id) =>
+  TABS.map((t) => {
+    const list = offers[t.id].filter((o) => o.operator === id && !o.discontinued);
+    if (!list.length) return null;
+    const min = Math.min(...list.map((o) => o.price));
+    return { label: t.label, count: list.length, min, ht: t.id === 'fibrePro' };
+  }).filter(Boolean);
 
 const SignalTrace = () => (
   <svg className="trace" viewBox="0 0 560 300" aria-hidden="true">
@@ -73,7 +82,7 @@ const OfferCard = ({ offer, tab, reva, best }) => {
     <article className={offer.discontinued ? 'offer offer-retired' : 'offer'} style={{ '--op': op.color }}>
       <header className="offer-head">
         <span className="op-chip">
-          <img src={op.logo} alt="" />
+          <OpLogo op={op} alt="" />
           {op.name}
         </span>
         <div className="tags">
@@ -259,21 +268,27 @@ const App = () => {
 
         <section className="operators" aria-labelledby="op-titre">
           <h2 id="op-titre">Les trois opérateurs</h2>
-          <p className="note">Notes subjectives de l'auteur, non officielles.</p>
+          <p className="note">Nombre d'offres répertoriées dans le comparateur et prix mensuel le plus bas par catégorie.</p>
           <div className="op-list">
             {Object.entries(operators).map(([id, op]) => (
               <article key={id} className="op" style={{ '--op': op.color }}>
                 <div className="op-top">
-                  <span className="op-logo"><img src={op.logo} alt={op.name} /></span>
+                  <span className="op-logo"><OpLogo op={op} alt={op.name} /></span>
                   <div>
                     <h3>{op.name}</h3>
                     <p className="op-tag">{op.tagline}</p>
                   </div>
                 </div>
                 <p className="op-desc">{op.description}</p>
-                <dl className="ratings">
-                  {[['Couverture', op.coverage], ['Vitesse', op.speed], ['Prix', op.price], ['Support', op.support]].map(([l, v]) => (
-                    <div key={l}><dt>{l}</dt><dd><Stars value={v} /></dd></div>
+                <dl className="facts">
+                  {operatorFacts(id).map((f) => (
+                    <div key={f.label}>
+                      <dt>{f.label}</dt>
+                      <dd>
+                        {f.count} offre{f.count > 1 ? 's' : ''}
+                        <span className="facts-min">dès {fmt(f.min)} F{f.ht ? ' HT' : ''}</span>
+                      </dd>
+                    </div>
                   ))}
                 </dl>
                 <div className="op-actions">

@@ -1,27 +1,27 @@
 export const operators = {
     vini: {
       name: 'Vini',
+      localLogo: '/logos/vini.svg',
       logo: 'https://www.vini.pf/themes/vini/images/logo.svg',
       color: '#dc001c',
       tagline: 'Opérateur historique',
       description: "Filiale de l'OPT, couverture sur tous les archipels",
-      coverage: 5, speed: 5, price: 3, support: 4,
     },
     ora: {
       name: 'Ora',
+      localLogo: '/logos/ora.svg',
       logo: 'https://www.ora.pf/wp-content/uploads/svg/ora.svg',
       color: '#005528',
       tagline: "Pionnier de l'internet sans ligne fixe",
       description: 'Premier internet sans ligne téléphonique depuis 2011',
-      coverage: 4, speed: 4, price: 4, support: 4,
     },
     vodafone: {
       name: 'Vodafone',
+      localLogo: '/logos/vodafone.png',
       logo: 'https://www.vodafone.pf/images/logo.png',
       color: '#8C1F28',
       tagline: "La puissance d'un réseau mondial",
       description: 'Entreprise 100% polynésienne avec expertise internationale',
-      coverage: 3, speed: 5, price: 5, support: 4,
     },
   };
 

@@ -263,3 +263,8 @@ button, select, input { font: inherit; color: inherit; }
 }
 
 .disclaimer { margin-top: 10px; max-width: 70ch; font-size: 0.8rem; color: var(--gris-bleu); }
+
+.ttc-note { color: var(--texte-3); font-size: 0.85rem; margin-top: 2px; }
+.specs { flex-wrap: wrap; row-gap: 10px; }
+.specs .spec-engagement dd { font-weight: 600; }
+.specs .spec-engagement dd.unknown { font-weight: 500; color: var(--gris-bleu); }

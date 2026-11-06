@@ -21,6 +21,8 @@ const CLIENT_AREAS = {
   vodafone: 'https://mon.vodafone.pf',
 };
 
+const TVA = 0.13; // TVA appliquée en Polynésie française sur ces offres
+
 const MAX_SPEED = 1000; // échelle logarithmique des barres de débit
 
 const num = (v) => {
@@ -67,6 +69,13 @@ const SignalTrace = () => (
   </svg>
 );
 
+const EngagementSpec = ({ offer }) => (
+  <div className="spec-engagement">
+    <dt>Engagement</dt>
+    <dd className={offer.engagement ? '' : 'unknown'}>{offer.engagement ? offer.engagement.label : 'Non renseigné'}</dd>
+  </div>
+);
+
 const OfferCard = ({ offer, tab, reva, best }) => {
   const op = operators[offer.operator];
   const isMobile = tab === 'mobile';
@@ -104,12 +113,14 @@ const OfferCard = ({ offer, tab, reva, best }) => {
           <p className="old-price">au lieu de {fmt(offer.price)} F</p>
         )}
       </div>
+      {isPro && <p className="ttc-note">soit {fmt(Math.round(price * (1 + TVA)))} F TTC (TVA 13 %)</p>}
       {revaActive && <p className="reva-note">Avec Vini Reva : {offer.reva.note}</p>}
       {offer.discontinued && <p className="retired-note">{offer.discontinued}</p>}
 
       {isMobile ? (
         <dl className="specs">
           <div><dt>Réseau</dt><dd>{offer.download}</dd></div>
+          <EngagementSpec offer={offer} />
           <div><dt>Data</dt><dd>{data}</dd></div>
         </dl>
       ) : (
@@ -133,6 +144,7 @@ const OfferCard = ({ offer, tab, reva, best }) => {
           <dl className="specs">
             <div><dt>Data</dt><dd>{data}</dd></div>
             {ratio !== null && <div><dt>{offer.internetPrice ? 'Prix par Mb/s, hors TV' : 'Prix par Mb/s'}</dt><dd>{fmt(ratio)} F</dd></div>}
+            <EngagementSpec offer={offer} />
           </dl>
         </>
       )}
@@ -149,6 +161,7 @@ const App = () => {
   const [operator, setOperator] = useState(null);
   const [sort, setSort] = useState('price');
   const [reva, setReva] = useState(false);
+  const [noCommit, setNoCommit] = useState(false);
 
   const isMobile = tab === 'mobile';
   const revaAvailable = offers[tab].some((o) => o.reva);
@@ -156,7 +169,9 @@ const App = () => {
 
   const list = useMemo(() => {
     const eff = (o) => (revaOn && o.reva ? o.reva.price : o.price);
-    const items = offers[tab].filter((o) => !operator || o.operator === operator);
+    const byOperator = offers[tab].filter((o) => !operator || o.operator === operator);
+    const items = noCommit ? byOperator.filter((o) => o.engagement && o.engagement.min === 0) : byOperator;
+    const hiddenUnknown = noCommit ? byOperator.filter((o) => !o.engagement).length : 0;
     const sorted = [...items];
     if (sort === 'speed' && !isMobile) {
       sorted.sort((a, b) => (num(b.download) || 0) - (num(a.download) || 0) || eff(a) - eff(b));
@@ -172,8 +187,8 @@ const App = () => {
         ratioPrice(o, revaOn) / num(o.download) < ratioPrice(best, revaOn) / num(best.download) ? o : best
       ).name;
     }
-    return { sorted, bestName };
-  }, [tab, operator, sort, revaOn, isMobile]);
+    return { sorted, bestName, hiddenUnknown };
+  }, [tab, operator, sort, revaOn, isMobile, noCommit]);
 
   const sortOptions = isMobile ? SORTS.slice(0, 1) : SORTS;
 
@@ -243,6 +258,12 @@ const App = () => {
                 </select>
               </label>
 
+              <label className="switch">
+                <input type="checkbox" checked={noCommit} onChange={(e) => setNoCommit(e.target.checked)} />
+                <span className="switch-ui" aria-hidden="true" />
+                <span>Sans engagement possible</span>
+              </label>
+
               {revaAvailable && (
                 <label className="switch">
                   <input type="checkbox" checked={reva} onChange={(e) => setReva(e.target.checked)} />
@@ -257,6 +278,8 @@ const App = () => {
             {list.sorted.length} offre{list.sorted.length > 1 ? 's' : ''}
             {operator ? ` chez ${operators[operator].name}` : ''}
             {revaOn && ', tarifs Vini Reva appliqués (engagement 24 mois)'}
+            {list.hiddenUnknown > 0 &&
+              `. ${list.hiddenUnknown} offre${list.hiddenUnknown > 1 ? 's' : ''} masquée${list.hiddenUnknown > 1 ? 's' : ''} faute d'information sur l'engagement`}
           </p>
 
           <div className="grid">
